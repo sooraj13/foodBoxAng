@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div>Cuisines</div>  
+        <div class="col-sm" *ngFor="let cuisine of cuisinesList">
+            {{cuisine}}
+        </div>
+      </div>
+      <div class="col-sm">
+        <div>Items</div>  
+        <div class="col-sm" *ngFor="let item of itemsList">
+            {{item}}
+        </div>
+      </div>
+      <div class="col-sm">
+        <div>Order Summary</div>  
+        <div class="col-sm" >
+            Total : {{ total }}
+        </div>
+        <div>
+            <input type="submit" value="Place Order" >
+        </div>
+      </div>
+    </div>
+
+  </div>
