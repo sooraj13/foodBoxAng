@@ -19,17 +19,20 @@ export class UserloginComponent implements OnInit {
 
   validateUser(){
 
-    this.userDetailsService.validateUser().subscribe(
-      data => {
+    this.userDetailsService.sendGetRequest().subscribe(
+      data => 
+      { 
+     
         this.resp = data;
-      }
-    )
-    if(this.resp.success == true){
-      this.route.navigate(['/userlogin/cuisines']);
-    }
-    else{
-      this.route.navigate(['/login']);
-    }
+       
+        if(this.resp.success == true){
+          this.route.navigate(['/userlogin/cuisines']);
+        }
+        else{
+          this.route.navigate(['/login']);
+        }
+      })
+
     
 
   }

@@ -13,8 +13,13 @@ export class UserDetailsService {
 
   constructor(private httpClient : HttpClient) { }
 
-  validateUser(): Observable<Resp>{ 
+  /*validateUser(): Observable<Resp>{ 
     return this.httpClient.get<Resp>(this.userDetailsUrl);
+  }*/
+  public sendGetRequest(){
+    return this.httpClient.get(this.userDetailsUrl).pipe(
+      map(value => Object.assign(new Resp , value))
+    );
   }
 }
 
