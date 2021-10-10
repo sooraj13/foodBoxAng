@@ -12,6 +12,11 @@ import { CuisinesComponent } from './components/cuisines/cuisines.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { UserloginComponent } from './components/userlogin/userlogin.component';
 import { SetdataComponent } from './components/setdata/setdata.component';
+import { HttpClientModule} from '@angular/common/http';
+import { UserDetailsService } from './services/user-details.service';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +33,11 @@ import { SetdataComponent } from './components/setdata/setdata.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
