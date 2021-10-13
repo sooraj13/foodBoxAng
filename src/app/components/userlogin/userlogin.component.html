@@ -12,6 +12,22 @@
       <img src="/assets/img/foodboxicon1.png" id="icon" alt="User Icon" />
     </div>
 
+
+  
+    <div >
+      <input type="text" [(ngModel)]="userDetails.email" class="form-control" placeholder="Email">
+    </div>
+
+    <div >
+      <input  type="text" [(ngModel)]="userDetails.password" class="form-control" placeholder="password">
+    </div>
+
+    <div >
+      <input  type="button"  (click)="validateUser(userDetails)" value="LOG IN">
+    </div>
+
+ 
+
     <!-- Login Form 
     <form >
       <input type="text" id="userName"  formControlName="userName"  class="fadeIn second" placeholder="User Name">
@@ -19,7 +35,7 @@
       <input type="submit" class="fadeIn fourth" value="Log In" (click) = "validateUser()">
     </form>
     -->
-    <input type="submit" class="fadeIn fourth" value="Log In" (click) = "validateUser()">
+    <!--<input type="submit" class="fadeIn fourth" value="Log In" (click) = "validateUser()"> -->
 
     <!-- Remind Passowrd -->
   <!--  <div id="formFooter">

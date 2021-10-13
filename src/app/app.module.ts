@@ -16,6 +16,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { UserDetailsService } from './services/user-details.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [UserDetailsService],
   bootstrap: [AppComponent]

@@ -13,13 +13,13 @@
     </div>
 
     <!-- register Form -->
-    <form>
-      <input type="text" id="name" class="fadeIn second" name="login" placeholder="Name">
-      <input type="text" id="email" class="fadeIn third" name="login" placeholder="Email">
-      <input type="text" id="phone" class="fadeIn second" name="login" placeholder="Phone">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
-      <input type="submit" class="fadeIn fourth" value="Submit">
-    </form>
+    
+      <input type="text" [(ngModel)]="userDetails.userName"  id="name" class="fadeIn second"  placeholder="Name">
+      <input type="text" [(ngModel)]="userDetails.email" id="email" class="fadeIn third"  placeholder="Email">
+      <input type="text" [(ngModel)]="userDetails.phoneNr" id="phone" class="fadeIn second" placeholder="Phone">
+      <input type="text" [(ngModel)]="userDetails.password" id="password" class="fadeIn third"  placeholder="Password">
+      <input type="button" (click)="registerUser(userDetails)"  class="fadeIn fourth" value="Submit">
+   
 
 
   </div>
