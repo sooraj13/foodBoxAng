@@ -11,8 +11,10 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class UserDetailsService {
 
+
   private userLoginUrl = 'http://localhost:8081/user/validate';
   private userSignUpUrl = 'http://localhost:8081/user/register';
+  private userFrgtPswrdUrl = 'http://localhost:8081/user/frgtPswrd';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -35,8 +37,8 @@ export class UserDetailsService {
 
 
     // HttpClient API post() method => userLogin
-  validateUser(UserDetails): Observable<Resp> {
-    return this.httpClient.post<Resp>(this.userLoginUrl , JSON.stringify(UserDetails), this.httpOptions)
+  validateUser(userDetails): Observable<Resp> {
+    return this.httpClient.post<Resp>(this.userLoginUrl , JSON.stringify(userDetails), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -44,13 +46,24 @@ export class UserDetailsService {
   } 
 
     // HttpClient API post() method => sign up
-    registerUser(UserDetails): Observable<Resp> {
-      return this.httpClient.post<Resp>(this.userSignUpUrl , JSON.stringify(UserDetails), this.httpOptions)
+    registerUser(userDetails): Observable<Resp> {
+      return this.httpClient.post<Resp>(this.userSignUpUrl , JSON.stringify(userDetails), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
     } 
+
+
+
+    // Update Password
+    updatePassword(userDetails): Observable<Resp> {
+      return this.httpClient.post<Resp>(this.userFrgtPswrdUrl , JSON.stringify(userDetails), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+    }
 
    // Error handling 
    handleError(error) {

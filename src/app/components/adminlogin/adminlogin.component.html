@@ -13,11 +13,16 @@
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="userName"  formControlName="userName"  class="fadeIn second" placeholder="Admin Name">
-      <input type="text" id="password"   formControlName="password"  class="fadeIn third"  placeholder="Password">
-      <input type="submit" class="fadeIn fourth" value="Log In" (click) = "validateUser()">
-    </form>
+      <div>
+        <input type="text" id="userName" [(ngModel)]="userDetails.email" class="fadeIn second" placeholder="Email">
+      </div>
+      <div>
+        <input type="text" id="password"  [(ngModel)]="userDetails.password"  class="fadeIn third"  placeholder="Password">
+      </div> 
+      <div >
+        <input  type="button"  (click)="validateUser(userDetails)" value="LOG IN">
+      </div>
+
 
     <!-- Remind Passowrd -->
   <!--  <div id="formFooter">

@@ -36,6 +36,7 @@ export class UserloginComponent implements OnInit {
           this.route.navigate(['/userlogin/cuisines']);
         }
         else{
+          alert("Invalid User Name or Password");
           this.route.navigate(['/login']);
         }
       }

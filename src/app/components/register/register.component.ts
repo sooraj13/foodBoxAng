@@ -26,10 +26,11 @@ export class RegisterComponent implements OnInit {
       {
         this.resp = data;
         if(this.resp.success == true){
-          this.route.navigate(['/userlogin/cuisines']);
+          alert("User Registered Successfully");
+          this.route.navigate(['']);
         }
         else{
-          this.route.navigate(['/login']);
+          alert("Something went wrong . Please try again.");
         }
       }
     )
