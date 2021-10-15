@@ -1,32 +1,27 @@
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Cuisine</th>
-        <th scope="col">Item</th>
+        <th scope="col">Cuisine Name</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Description</th>
         <th scope="col">Price</th>
         <th scope="col">Enable/Disable</th>
+        <th scope="col">Update</th>
+
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      
+      <tr *ngFor = "let tempItem of itemsList">
+        <td><input type="text"  [(ngModel)]="tempItem.cuisine"   value="{{ tempItem.cuisine }}"/></td>
+        <td><input type="text" [(ngModel)]="tempItem.itemName"   value="{{ tempItem.itemName }}"/></td>
+        <td><input type="text" [(ngModel)]="tempItem.description"  value="{{ tempItem.description }}"/></td>
+        <td><input type="text" [(ngModel)]="tempItem.price"  value="{{ tempItem.price }}"/></td>
+        <td><input type="text" [(ngModel)]="tempItem.enable"  value="{{ tempItem.enable }}"/></td>
+        <td><input type="button" (click)="updateItem(tempItem)" value="Update"/></td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+
     </tbody>
   </table>
 
-  <input type="button" value="Add New Row"/>
+  <input type="button"  (click)="addRow()"  value="Add New Row"/>
