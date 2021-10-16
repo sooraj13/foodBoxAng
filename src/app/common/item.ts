@@ -6,6 +6,7 @@ export class Item {
     public description:string ;
     public price:number ;
     public enable:string ;
+    public qty:number;
 
 
 }

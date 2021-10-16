@@ -33,7 +33,7 @@ export class UserloginComponent implements OnInit {
       {
         this.resp = data;
         if(this.resp.success == true){
-          this.route.navigate(['/userlogin/cuisines']);
+          this.route.navigate(['/userlogin/cuisines/' + this.resp.email ]);
         }
         else{
           alert("Invalid User Name or Password");

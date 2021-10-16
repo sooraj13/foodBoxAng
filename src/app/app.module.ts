@@ -17,6 +17,9 @@ import { UserDetailsService } from './services/user-details.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './components/cart/cart.component';
+import { SummaryComponent } from './components/summary/summary.component';
+
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     CuisinesComponent,
     AdminloginComponent,
     UserloginComponent,
-    SetdataComponent
+    SetdataComponent,
+    CartComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

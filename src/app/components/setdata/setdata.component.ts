@@ -57,7 +57,8 @@ export class SetdataComponent implements OnInit {
      cuisine:'' ,
      description:'' ,
      price:0 ,
-     enable:'' 
+     enable:'' ,
+     qty:0
     });
   }
 

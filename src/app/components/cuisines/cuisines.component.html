@@ -1,26 +1,28 @@
-<div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div>Cuisines</div>  
-        <div class="col-sm" *ngFor="let cuisine of cuisinesList">
-            {{cuisine}}
-        </div>
-      </div>
-      <div class="col-sm">
-        <div>Items</div>  
-        <div class="col-sm" *ngFor="let item of itemsList">
-            {{item}}
-        </div>
-      </div>
-      <div class="col-sm">
-        <div>Order Summary</div>  
-        <div class="col-sm" >
-            Total : {{ total }}
-        </div>
-        <div>
-            <input type="submit" value="Place Order" >
-        </div>
-      </div>
-    </div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Cuisine Name</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col" >Action</th>
+      <th scope="col" style="display: none;">ID</th>
+      <th scope="col" style="display: none;">ROWID</th>
 
-  </div>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor = "let tempItem of itemsList;let i=index;">
+      <td><input type="text"  [(ngModel)]="tempItem.cuisine"   value="{{ tempItem.cuisine }}"/></td>
+      <td><input type="text" [(ngModel)]="tempItem.itemName"   value="{{ tempItem.itemName }}"/></td>
+      <td><input type="text" [(ngModel)]="tempItem.description"  value="{{ tempItem.description }}"/></td>
+      <td><input type="text" [(ngModel)]="tempItem.price"  value="{{ tempItem.price }}"/></td>
+      <td><input type="button" (click)="addToCart(tempItem)" value="Add To Cart"/></td>
+      <td><input type="text" [(ngModel)]="tempItem.id"  value="{{ tempItem.id }}" style="display: none;"/></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<input type="button"  (click)="goToCart()"  value="Go To Cart"/>

@@ -7,14 +7,18 @@ import { CuisinesComponent } from './components/cuisines/cuisines.component';
 import { AdminloginComponent} from './components/adminlogin/adminlogin.component';
 import { UserloginComponent } from './components/userlogin/userlogin.component';
 import { SetdataComponent } from './components/setdata/setdata.component';
+import { CartComponent} from './components/cart/cart.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 const routes: Routes = [{path:'login' , component: LoginComponent},
   {path:'register' , component: RegisterComponent},
   {path: 'forgotpassword' , component: ForgotpasswordComponent },
-  {path: 'userlogin/cuisines' , component: CuisinesComponent },
+  {path: 'userlogin/cuisines/:id' , component: CuisinesComponent },
   {path: 'adminlogin' , component: AdminloginComponent },
   {path: 'userlogin' , component: UserloginComponent },
-  {path: 'adminlogin/setdata' , component: SetdataComponent }
+  {path: 'adminlogin/setdata' , component: SetdataComponent },
+  {path: 'userlogin/cart/:id' , component:CartComponent},
+  {path : 'userlogin/cart/summary/:id', component:SummaryComponent}
 ];
 
 @NgModule({

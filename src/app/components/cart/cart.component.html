@@ -1,0 +1,34 @@
+<body >
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Cuisine Name</th>
+        <th scope="col">Item Name</th>
+        <th scope="col" >Quantity</th>
+        <th scope="col">Price</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor = "let tempItem of cartList">
+        <td><input type="text"  [(ngModel)]="tempItem.cuisine"   value="{{ tempItem.cuisine }}"/></td>
+        <td><input type="text" [(ngModel)]="tempItem.itemName"   value="{{ tempItem.itemName }}"/></td>
+        <td><input type="text" [(ngModel)]="tempItem.qty"  value="{{ tempItem.qty }}" /></td>
+        <td><input type="text" [(ngModel)]="tempItem.price"  value="{{ tempItem.price }}"/></td>
+        
+      </tr>
+  
+    </tbody>
+  </table>
+
+  <div style="text-align: center;">
+    <b>Total : <input type="text"    value="{{ total }}" disabled/></b>
+   </div>
+
+   <br>
+
+<div style="text-align: center;">
+ <input type="button"  (click)="placeOrder()"  value="Place Order"/>
+</div>
+</body>
