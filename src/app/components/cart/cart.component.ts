@@ -42,7 +42,21 @@ export class CartComponent implements OnInit {
 
   placeOrder(){
 
-    this.route.navigate(['userlogin/cart/summary/' + this.route.url.split('/')[((this.route.url.split('/')).length ) - 1]]);
+    this.orderService.placeOrder(this.orderDetl).subscribe(
+     data => {
+       if(data.success == true){
+        this.route.navigate(['userlogin/cart/summary/' + this.route.url.split('/')[((this.route.url.split('/')).length ) - 1]]);
+       }
+       else{
+         alert("Something Went Wrong Please Try Again");
+       }
+     }
+   );
+    
+  }
+
+  goBack(){
+    this.route.navigate(['userlogin/cuisines/' + this.route.url.split('/')[((this.route.url.split('/')).length ) - 1]]);
   }
 
 

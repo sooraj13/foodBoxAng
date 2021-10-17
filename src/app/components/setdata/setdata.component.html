@@ -18,10 +18,10 @@
         <td><input type="text" [(ngModel)]="tempItem.description"  value="{{ tempItem.description }}"/></td>
         <td><input type="text" [(ngModel)]="tempItem.price"  value="{{ tempItem.price }}"/></td>
         <td><input type="text" [(ngModel)]="tempItem.enable"  value="{{ tempItem.enable }}"/></td>
-        <td><input type="button" (click)="updateItem(tempItem)" value="Update"/></td>
+        <td><input type="button" class="btn btn-success" (click)="updateItem(tempItem)" value="Update"/></td>
       </tr>
 
     </tbody>
   </table>
 
-  <input type="button"  (click)="addRow()"  value="Add New Row"/>
+  <input type="button"  class="btn btn-success" (click)="addRow()"  value="Add New Row"/>

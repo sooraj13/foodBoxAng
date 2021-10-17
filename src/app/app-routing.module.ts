@@ -10,7 +10,8 @@ import { SetdataComponent } from './components/setdata/setdata.component';
 import { CartComponent} from './components/cart/cart.component';
 import { SummaryComponent } from './components/summary/summary.component';
 
-const routes: Routes = [{path:'login' , component: LoginComponent},
+const routes: Routes = [{path: '' , redirectTo: 'login' , pathMatch: 'full'},
+  {path:'login' , component: LoginComponent},
   {path:'register' , component: RegisterComponent},
   {path: 'forgotpassword' , component: ForgotpasswordComponent },
   {path: 'userlogin/cuisines/:id' , component: CuisinesComponent },

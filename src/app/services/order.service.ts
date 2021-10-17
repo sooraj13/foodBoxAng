@@ -14,6 +14,7 @@ export class OrderService {
 
   private addToCartUrl = 'http://localhost:8081/order/addToCart';
   private cartPageUrl = 'http://localhost:8081/order/getCartDtls';
+  private placeOrderUrl = 'http://localhost:8081/order/placeOrder';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -32,6 +33,14 @@ export class OrderService {
         retry(1),
         catchError(this.handleError)
       )
+    }
+
+    placeOrder(req:any): Observable<Resp>{
+        return this.httpClient.post<Resp>(this.placeOrderUrl , JSON.stringify(req) , this.httpOptions)
+        .pipe(
+          retry(1),
+          catchError(this.handleError)
+        )
     }
 
 

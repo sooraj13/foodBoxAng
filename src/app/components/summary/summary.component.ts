@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-summary',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+
+  goBack(){
+    this.route.navigate(['/userlogin/cuisines/' + this.route.url.split('/')[((this.route.url.split('/')).length ) - 1]  ]);
   }
 
 }
